@@ -1,0 +1,353 @@
+#TopBtn {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 99;
+    font-size: 9px;
+    border: none;
+    outline: none;
+    background-color:#FF8C00;
+    color:black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 6px;
+
+}
+
+#TopBtn:hover {
+    background-color: #fff;
+    color: #680000;
+    border: solid 2px #680000;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+body{
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    margin: 3px;
+    padding-left: 20px;
+    width: 170px;
+    height: 50px;
+    float: left;
+}
+
+.register {
+    background-color: #680000;
+}
+
+.content {
+    padding: 0px;
+}
+
+.logo-home {
+    height: 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+    padding: 0px;
+}
+
+.buttonActionDN{
+    float: right; 
+    margin: 10px;
+    cursor: pointer;
+    height: 38px;
+    width: 100px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:#680000;
+    border:solid 2px #680000;
+}
+.buttonActionDN:hover{
+    background-color: #680000;
+    color:#fff;
+}
+.buttonActionDK{
+    float: right; 
+    margin: 10px;
+    cursor: pointer;
+    height: 38px;
+    width: 100px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #680000;
+    color: #fff; 
+    transition: all 0.3s; 
+}
+.buttonActionDK:hover{
+    color: #680000;
+    background-color: #fff;
+    border:solid 2px #680000;
+}
+.search {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    margin: 10px;
+    position: absolute;
+    left: calc(50% - 300px);
+}
+
+.searchbar {
+    width: 500px;
+    height: 38px;
+    border-radius: 5px;
+    border: solid 2px #680000;
+}
+
+.buttonSearch {
+    height: 38px;
+    width: 38px;
+    margin-left: 2px;
+    border: solid 2px #680000;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+    
+}
+.buttonSearch:hover{
+    background-color: rgb(220, 220, 220);
+}
+.title {
+    text-align: center;
+    font-size: 50px;
+    height: 70px;
+    color: #680000;
+    letter-spacing: .1em;
+    text-shadow: 2px 2px #f3e3e3;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.bestsellers{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.bestsellers .item{
+    border: solid 1px #680000;
+    margin: 10px;
+    width:20%;
+    height:450px;
+}
+.bestsellers .item .bsa{
+    width:100%;
+    height:300px;
+}
+.bst{
+    width:90%;
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+    font-size: 16px;  
+    display:block;
+    position:relative;
+    overflow:hidden;
+    max-width: 100%;
+    margin:0 auto;
+    padding:0;
+}
+.bestsellers .item p{
+    color:#680000;
+    font-weight: bold;
+    padding: 20px;
+}
+.bst:hover{
+    color:#680000;
+    font-weight: bold;
+}
+.containermenu{
+    background-color: #680000;
+}
+.navbar-nav{
+    text-align: center;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+.nav-item{
+    list-style-type: none; 
+    display:inline-block;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white; 
+    margin-right: 40px;
+    font-weight: bold;
+}
+.nav-link:hover{
+    color:rgb(237, 237, 144);
+}
+.banner2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:400px;
+}
+.footer{
+    background-color: #680000;
+    color:white;
+    position:relative;
+    height:300px
+}
+.footer-content{
+    display:flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: left;
+}
+.footer-left, .footer-right{
+    flex:1;
+}
+.footer-left p, .footer-right p {
+    margin: 5px;
+}
+.hrfooter{
+    width:70%
+}
+.Copyrighted{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar{
+    display:block;
+    width:25px;
+    height:3px;
+    background-color: #680000;
+    margin: 5px 0;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+.nav-item:nth-child(7),
+.nav-item:nth-child(8) {
+    display: none;
+}
+@media only screen and (max-width: 750px) {
+    #TopBtn{
+        bottom:307px;
+    }
+    .nav-item:nth-child(7),
+    .nav-item:nth-child(8) {
+        display: block;
+    }
+    .menu-toggle {
+        margin-top: 3px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 3;
+        width: 30px;
+    }
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        background-color: #680000;
+        z-index: 1;
+    }
+    .buttonActionDK{
+        display: none;
+    }
+    .buttonActionDN{
+        display:none;
+    }
+    .navbar-nav.show {
+        display: flex;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        font-size: 16px;
+    }
+    .searchbar{
+        width:400px;
+        transition: width 0.5s ease;
+    }
+    .search{
+        position:absolute;
+        left:calc(50% - 150px);
+        transition: margin-left 0.2s ease;
+    }
+    .bestsellers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bestsellers .item {
+        width: 60%;
+        height:500px;
+    }
+    .bestsellers .item .bsa{
+        height:350px;
+    }
+    .banner2 img {
+        width: 100%; 
+        height: auto;
+    }
+    .banner2{
+        height:250px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .searchbar{
+        width:200px;
+    }
+    .search{
+        position: absolute;
+        left:calc(50% -  50px)
+    }
+    .footer{
+        height:400px;
+    }
+
+    .bestsellers .item{
+        height: 420px;
+        width:65%;
+    }
+    .bestsellers .item .bsa{
+        height:300px;
+    }
+    .banner2{
+        height:200px;
+    }
+    #TopBtn{
+        bottom: 405px;
+    }
+}
+
