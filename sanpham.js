@@ -1,3 +1,4 @@
+let sp={name: "Essentials Pants", img: "../image/product_44.jpg", price: 640000, id: "p42", quantity: 100};
 const arrSp=[
     {name: "Essentials Pants", img: "../image/product_44.jpg", price: 640000, id: "p42", quantity: 100},
     {name: "Tiro 19 Training Pants", img: "../image/product_45.jpg", price: 800000, id: "p43", quantity: 100},
@@ -86,22 +87,22 @@ const arrSp=[
     ];
     var str='';
     for(let i=0;i<arrSp.length;i++){
-        //var obj=JSON.stringify(arrSp[i]);
+        var obj=JSON.stringify(arrSp[i]);
         str+=` <div class="cartegory-right-content-item">
         <div class=".product-item">
             <div class="product-wrapper">
                 <div class="product-image product-image-block">
                     <a href="#" title="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ">
-                        <img src="./image/${arrSp[i].img}" alt="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ" class="image_main img-responsive center-block">
+                        <img src="./image/${arrSp[i].img}" alt="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ" class="image_main img-responsive center-block image_product">
                     </a>
-                    <button class="buynow" onclick="addCart()" >Mua ngay</button>
+                    <button class="buynow" onclick=\'addCart(\`${obj}\`)\' >Mua ngay</button>
                 </div>
                 <h3 class="product_name">
                     <a href="#" title="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ">${arrSp[i].name}</a>
                 </h3>
                 <div class="product_prices">
                     <span class="special-price">${arrSp[i].price}</span><sup class="special-price-sup">đ</sup>
-                    <button class="btndetail"  >Detail</button>
+                    <button class="btndetail" onclick=\'showDetail(\`${obj}\`)\' >Detail</button>
                 </div>
             </div>
         </div>
@@ -111,10 +112,44 @@ const arrSp=[
     document.querySelector(".cartegory-right-content").innerHTML=str;
 let soluong=0;
 const arrCart=[];
-    function addCart(){
-soluong++;
-//let item={name:"",img:"",price:"",id:"",quantity:""};
-//addCart.push(item);
-document.querySelector(".cartNum").innerText=soluong;
+    function addCart(objSP){
+        console.log(objSP);
+var item;
+var qtyItem=0;
+var flag=false
+;
+for(let i=0;i<arrCart.length;i++){
+    if(arrCart[i].sp.id==objSP.id){
+        arrCart[i].quantity++;
+        flag=true;
+        break;
+    }
 }
+if(flag=false){
+    document.querySelector(".cartNum").innerText=soluong;
+    let cartItem={sp: objSP,quantity:1};
+    addCart.push(cartItem);
+}
+soluong++;
+document.querySelector(".cartNum").innerText=soluong;
 
+}
+function showDetail(objSP){
+    window.localStorage.clear();
+    console.log(objSP);
+    window.localStorage.setItem("sanpham", objSP);
+    var product = JSON.parse(localStorage.getItem('sanpham'));
+    var temp1 = '<img src="' + product.img + '">';
+    var temp2 = '<h2>' + product.name + '</h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">' + product.price.toLocaleString('sanpham', {style : 'currency', currency : 'VND'}) + '</p>';
+    
+    document.getElementById('image').innerHTML = temp1;
+    document.getElementById('productInfo').innerHTML = temp2;
+   // document.querySelector("#image").src=`./image/${product.img}`;
+  // document.querySelector("#productInfo").innerHTML=product.name;
+    document.getElementById('product_detail').style.top="10%";
+    document.getElementById("atc").innerHTML = '<a class="btnAddtoCart" onclick=\'addCart(\`${obj}\`)\' >Add to cart</a>'
+}
+function closeDetail()
+{
+	document.getElementById('product_detail').style.top = "-300%";
+}

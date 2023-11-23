@@ -6,6 +6,123 @@
 a,li{
     list-style: none;
 }
+.productDetail {
+    top: -300%;
+    left: 22%;
+    z-index: 3;
+    position: fixed;
+    width: 60%;
+    height: auto;
+    display: block;
+    background: #ffF;
+    transition: 0.7s;
+    border-radius: 5px;
+    border: 5px solid #680000;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
+}
+.productDetail .col-2 img {
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 80%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    
+    
+}
+.info {
+    margin-left: 15px;
+    margin-top: 0%;
+}
+.price-p{
+    margin: 3px 0px 5px 0px;
+}
+.Description{
+    margin: 3px 0px 5px 0px;
+}
+h2 {
+    font-size: 30px;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: #680000;
+    margin-bottom: 0px;
+}
+.rating span {
+    color: #680000;
+    font-size: 20px;
+    margin-bottom: 0px;
+
+}
+.productInfo{
+    height: 200px;
+
+}
+#size {
+    font-size: 16px;
+    border: 2px solid #000;
+    width: 100px;
+}
+.closeDetail {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 50px;
+    color: black;
+    top: 0;
+    right: 0;
+    margin-top: -10px;
+    position: absolute;;
+}
+.quantitydown {
+    display: inline-block;
+    font-size: 16pt;
+    color: #680000;
+    width: 28px;
+    height: 29px;
+    border-radius: 59%;
+    border-left: none;
+    background-color: #fff;
+    outline: none;
+    border: 2px solid black;
+}
+#quantity, #quan {
+    font-size: 16pt;
+    width: 40px;
+    height: 25px;
+   
+    border: 2px solid #000;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.quantityup {
+    display: inline-block;
+    font-size: 16pt;
+    color: #680000;
+    width: 28px;
+    height: 29px;
+    border-radius: 59%;
+    border-left: none;
+    background-color: #fff;
+    outline: none;
+    border: 2px solid black;
+}
+.addCart{
+    background: #680000;
+    border-radius: 7px;
+    width: 90px;
+    height: 30px;
+    border: 2px;
+    margin-top: 10px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    position: relative;
+}
+.btnAddtoCart{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+    margin-left: 4%;
+    padding-top: 5px;
+    position: absolute;
+}
 .Cart{
     position: relative;
     width: 50px;
@@ -226,10 +343,12 @@ margin: 60px 0 20px 0 ;
     color:#680000 ;
     font-weight: 900;
     font-size: 16px;
+    
 }
  .special-price-sup{
     color:#680000 ;
     font-weight: 900;
+  
 }
  .product_prices {
     margin-top: 10px;

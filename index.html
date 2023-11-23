@@ -14,6 +14,43 @@
         <body>
             
             <div class="main">
+                <div class="productDetail" id="product_detail">
+                    <div class="row">
+                        <div class="col-2" id="image" class="image_product">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div id="productInfo"></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <b>Quantity: </b>
+                                <div class="quantity"> 
+                                    <button class="quantitydown" onclick="quantitydown()">-</button> 
+                                    <input type="text" id="quantity" value="1"> 
+                                    <button class="quantityup" onclick="quantityup()">+</button>
+                                </div>
+                                <div id="atc" class="addCart" style="cursor: pointer;">
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                </div>
                 <div class="header">
                     <div id="mobile-menu" class="menu-toggle">
                         <span class="bar"></span>
@@ -222,8 +259,9 @@
                             </div>
                             <div class="cartegory-right row">
                                 <div class="cartegory-right-content row">
-                                    
+                                  
                                 </div>
+                               
                                 <div class="text-xs-right">
                                     <nav class="text-center">
                                       <ul class="pagination clearfix">
