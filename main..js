@@ -61,3 +61,4 @@ function showDetail8(){
 //     document.getElementById('product_detail7').style.top = "-300%";
 //     document.getElementById('product_detail8').style.top = "-300%";
 // }
+///ttttt
