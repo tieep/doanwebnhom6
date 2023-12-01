@@ -1,27 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>Sports Paradise</title>
+</head>
+<body>
     
-        <html lang="en"><head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
-            <link rel="stylesheet" href="style1.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-            <title>Sports Paradise</title>
-        </head>
-        
-        <body>
-            
-            <div class="main">
-                <div class="productDetail" id="product_detail">
+    <div class="main" id="main">
+        <div class="header">
+            <div id="mobile-menu" class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <img src="./image/logo.png" alt="logo" class="logo">
+            <form class="search">
+                <input class="searchbar" type="search" placeholder="Tìm kiếm......" >
+                <button class="buttonSearch"><i class="fas fa-search" style="color: #680000;"></i></button>
+            </form>
+            <button type="button" class="buttonActionDN">
+                LOG IN
+            </button>
+            <button type="button" class="buttonActionDK">
+                REGISTER
+            </button>
+        </div>
+        <div class="content" >
+            <div class="topmenu" >
+                <nav class="navbar">          
+                    <div class="containermenu" >
+                        <div class="menu-item" id="navbarNavDropdown"> 
+                            <ul class="navbar-nav" >
+                                <li class="nav-item" id="homePage">
+                                    <a class="nav-link active"
+                                        aria-current="page" href="index.html">
+                                        <i class="fas fa-home" ></i>
+                                        HOME
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="man">
+                                    <a class="nav-link" onclick="changePagetoPage('all')" href="#">
+                                        ALL PRODUCTS
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="shirt">
+                                    <a class="nav-link"  onclick="changePagetoPage('shirt')" href="#">
+                                        T-SHIRTS
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="pant">
+                                    <a class="nav-link" onclick="changePagetoPage('pants')"  href="#">
+                                        PANTS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        CART                                 
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="mobile-DK"><a class="nav-link" href="#">REGISTER</a></li>
+                                <li class="nav-item" id="mobile-DN"><a class="nav-link" href="#">LOG IN</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <button onclick="topFunction()" id="TopBtn" title="Go to top">TOP</button>
+            <div class="page" id="homePage1">
+                <div class="banner1">
+                    <img src="./image/banner1.jpg" alt="banner" class="banner1">
+                </div>
+                <div class="title">BEST SELLERS</div>
+                <div class="bestsellers">
+                    <div class="item">
+                        <img src="image/product_64.jpg" class="bsa"><br/>
+                        <a class="bst">Essentials Fleece Jogger Pants</a>
+                        <p>640000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail1()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_65.jpg" class="bsa"><br/>
+                        <a class="bst">Adicolor SST Track Pants</a>
+                        <p>800000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail2()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_68.jpg" class="bsa"><br/>
+                        <a class="bst">ID Pants</a>
+                        <p>900000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail3()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_69.jpg" class="bsa"><br/>
+                        <a class="bst">Cross Up 365 Pants</a>
+                        <p>900000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail4()">Detail</button>
+                    </div>
+                </div>
+                <div class="title">NEW ARRIVALS</div>
+                <div class="bestsellers">
+                    <div class="item">
+                        <img src="image/product_32.jpg" class="bsa"><br/>
+                        <a class="bst">Pride Trefoil Flag Fill Tee</a>
+                        <p>600000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail5()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_33.jpg" class="bsa"><br/>
+<a class="bst">Big Badge of Sport Boxy Tee</a>
+                        <p>600000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail6()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_15.jpg" class="bsa"><br/>
+                        <a class="bst">Chile 20 Tee</a>
+                        <p>900000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail7()">Detail</button>
+                    </div>
+                    <div class="item">
+                        <img src="image/product_16.jpg" class="bsa"><br/>
+                        <a class="bst">3D Trefoil Graphic Tee</a>
+                        <p>600000<sup class="special-price-sup">đ</sup></p>
+                        <button class="btndetail1" onclick="showDetail8()">Detail</button>
+                    </div>
+                </div>
+                <div class="banner2">
+                    <img src="./image/banner2.webp" alt="banner2">
+                </div>
+                <div class="productDetail" id="product_detail1">
                     <div class="row">
-                        <div class="col-2" id="image" class="image_product">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_64.jpg" style="width: 65%;">
                         </div>
                         <div class="col-2">
                             <div class="info">
                                 <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
-                                <div id="productInfo"></div>
+                                <div><h2>Essentials Fleece Jogger Pants</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">640000<sup>đ</sup></p></div>
                                 <b>Description: </b>
                                 <p class="Description"> 
                                     Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
@@ -37,274 +158,446 @@
                                         <option>XXL</option>
                                     </select>
                                 </div>
-                                <b>Quantity: </b>
-                                <div class="quantity"> 
-                                    <button class="quantitydown" onclick="quantitydown()">-</button> 
-                                    <input type="text" id="quantity" value="1"> 
-                                    <button class="quantityup" onclick="quantityup()">+</button>
-                                </div>
-                                <div id="atc" class="addCart" style="cursor: pointer;">
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
                                 </div>
                             </div>
                         </div>
-        
                     </div>
-        
                 </div>
-                <div class="header">
-                    <div id="mobile-menu" class="menu-toggle">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                    <img src="image/logo.png" alt="logo" class="logo">
-                    <form class="search">
-                        <input class="searchbar" type="search" placeholder="Tìm kiếm......">
-                        <button class="butonSearch"><i class="fas fa-search" style="color: #680000;"></i></button>
-                    </form>
-                    <button type="button" class="buttonActionDN">
-                        ĐĂNG NHẬP
-                    </button>
-                    <button type="button" class="buttonActionDK">
-                        ĐĂNG KÝ
-                    </button>
-                </div>
-                <div class="content">
-                    <div class="topmenu">
-                        <nav class="navbar">
-                            <div class="containermenu">
-                                <div class="menu-item" id="navbarNavDropdown"> 
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">
-                                                <i class="fas fa-home"></i>
-                                                TRANG CHỦ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                ĐỒ THỂ THAO NAM
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                ĐỒ THỂ THAO NỮ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                PHỤ KIỆN THỂ THAO
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                LIÊN HỆ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link active " href="#">
-                                               
-                                                <i class="fas fa-shopping-cart Cart"> 
-                                                    <h1 class="cartNum">0</h1>
-                                                </i>
-                                                GIỎ HÀNG                                 
-                                            </a>
-                                        </li>
-                                    </ul>
+                <div class="productDetail" id="product_detail2">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_65.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>Adicolor SST Track Pants</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">800000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
                                 </div>
                             </div>
-                        </nav>
+                        </div>
                     </div>
+                </div> 
+                <div class="productDetail" id="product_detail3">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="./image/product_68.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>ID Pants</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">900000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+<b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="productDetail" id="product_detail4">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_69.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>Cross Up 365 Pants</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">900000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="productDetail" id="product_detail5">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_32.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>Pride Trefoil Flag Fill Tee</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">600000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="productDetail" id="product_detail6">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_33.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>Big Badge of Sport Boxy Tee</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">600000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="productDetail" id="product_detail7">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_15.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>Chile 20 Tee</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">900000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="productDetail" id="product_detail8">
+                    <div class="row">
+                        <div class="col-2" class="image_product">
+                            <img src="./image/product_16.jpg" style="width: 65%;">
+                        </div>
+                        <div class="col-2">
+                            <div class="info">
+                                <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                                <div><h2>3D Trefoil Graphic Tee</h2></h2><div class="rating"><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span><span>&#9733</span></div><p class="price-p">600000<sup>đ</sup></p></div>
+                                <b>Description: </b>
+                                <p class="Description"> 
+                                    Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                                </p>
+                                <b>Size : </b>
+                                <div>
+                                    <select id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option selected>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                                <div class="addCart" style="cursor: pointer;">
+                                    <a class="btnAddtoCart">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+           
+        </div>
+       
+        </div>
+        <!----------------------- phần content của trang sản phẩm----------->
+        <div class="main" id="main1" style="display: none;">
+            <div class="productDetail" id="product_detail">
+                <div class="row">
+                    <div class="col-2" id="image" class="image_product">
+                    </div>
+                    <div class="col-2">
+                        <div class="info">
+                            <a class="closeDetail" onclick="closeDetail()" style="cursor: pointer;">×</a>
+                            <div id="productInfo"></div>
+                            <b>Description: </b>
+                            <p class="Description"> 
+                                Unisex, comfortable for everyone in all age ranges, make you warm in winter, cool in summer, one of the best sellers in our shop. 
+                            </p>
+                            <b>Size : </b>
+                            <div>
+                                <select id="size">
+                                    <option>XS</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option selected>L</option>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                </select>
+                            </div>
+                            <div id="atc" class="addCart" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
-                
-                <section class="cartegory">
-                    <div class="banner">
-                        <img src="image/banner.png" alt="banner" class="banner">
-                        
-                    </div>
-                    <button  onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    
+            </div>
+            <section class="cartegory">
+                <div class="banner">
+                    <img src="image/banner.png" alt="banner" class="banner">
+                    
+                </div>
+                <button  onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
 
-                    <div class="container">
-                        <div  class="cartegory-top row">
-                            <a href="#">Trang chủ</a> <span> ></span> <p>Áo thể thao nam</p>
-                        </div>
+                <div class="container">
+                    <div  class="cartegory-top row">
+                        <a href="index.html">Trang chủ</a> <span> ></span> <p>All products</p>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="cartegory-left row">
-                              <div class="cartegory-left-top-iteam">
-                                <div class="aside-filter">
-                                    <div class="heading">
-                                        <h2 class="title-head">Bộ lọc</h2>
-                                    </div>
-                                    <div class="aside-hidden-mobile">
-                                        <div class="filter-container">
-                            
-                                            <aside class="aside-item filter-vendor">
-                                                <div class="aside-title">
-                                                    <h2 class="title-head margin-top-0">
-                                                        <span>Thương hiệu</span>
-                                                    </h2>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="cartegory-left row">
+                          <div class="cartegory-left-top-iteam">
+                            <div class="aside-filter">
+                                <div class="heading">
+                                    <h2 class="title-head">Bộ lọc</h2>
+                                </div>
+                                <div class="aside-hidden-mobile">
+                                    <div class="filter-container">
+                        
+                                        <aside class="aside-item filter-vendor">
+                                            <div class="aside-title">
+                                                <h2 class="title-head margin-top-0">
+                                                    <span>Tên Sản Phẩm</span>
+                                                </h2>
+                                            </div>
+                                            <div class="aside-content filter-group">
+                                                <div class="field-search input-group">
+                                                    <input type="text" placeholder="Tìm tên sản phẩm" >
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default">
+                                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                                        </button>
+                                                    </span>
                                                 </div>
-                                                <div class="aside-content filter-group">
-                                                    <div class="field-search input-group">
-                                                        <input type="text" placeholder="Tìm Thương hiệu" class="form-control filter-vendor-list" onkeyup="filterItemInList(jQuery('.filter-vendor-list'))">
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-default">
-                                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                            </button>
-                                                        </span>
-                                                    </div>
-                                                    <ul class="filter-vendor"> </ul>
-                                                </div>
-                                            </aside>
-                                            <aside class="aside-item filter-price">
-                                                <div class="aside-title">
-                                                    <h2 class="title-head margin-top-0">
-                                                        <span>Giá sản phẩm</span>
-                                                    </h2>
-                                                </div>
-                                                <div class="aside-content filter-group">
-                                                    <ul>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-duoi-100-000d">
-                                                                    <input type="checkbox" id="filter-duoi-100-000d" onchange="toggleFilter(this);" data-group="Khoảng giá" data-field="price_min" data-text="Dưới 100.000đ" value="(<100000)" data-operator="OR">
-                                                                
-                                                                    Giá dưới 100.000đ 
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-100-000d-300-000d">
-                                                                    <input type="checkbox" id="filter-100-000d-300-000d" onchange="toggleFilter(this)" data-group="Khoảng giá" data-field="price_min" data-text="100.000đ - 300.000đ" value="(>100000 AND <300000)" data-operator="OR">
-                                                                  
-                                                                100.000đ - 300.000đ 
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-300-000d-500-000d">
-                                                                    <input type="checkbox" id="filter-300-000d-500-000d" onchange="toggleFilter(this)" data-group="Khoảng giá" data-field="price_min" data-text="300.000đ - 500.000đ" value="(>300000 AND <500000)" data-operator="OR">
-                                                                    
-                                                                    300.000đ - 500.000đ 
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-500-000d-1-000-000d">
-                                                                    <input type="checkbox" id="filter-500-000d-1-000-000d" onchange="toggleFilter(this)" data-group="Khoảng giá" data-field="price_min" data-text="500.000đ - 1.000.000đ" value="(>500000 AND <1000000)" data-operator="OR">
-                                                                  
-                                                                     500.000đ - 1.000.000đ
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-tren1-000-000d">
-                                                                    <input type="checkbox" id="filter-tren1-000-000d" onchange="toggleFilter(this)" data-group="Khoảng giá" data-field="price_min" data-text="Trên 1.000.000đ" value="(>1000000)" data-operator="OR">
-                                                                   
-                                                                    Giá trên 1.000.000đ
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </aside>
-                                            <aside class="aside-item filter-tag-style-1 tag-filtster">
-                                                <div class="aside-title">
-                                                    <h2 class="title-head margin-top-0">
-                                                        <span>Kích thước</span>
-                                                    </h2>
-                                                </div>
-                                                <div class="aside-content filter-group">
-                                                    <ul>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-lon">
-                                                                   <input type="checkbox" id="filter-lon" onchange="toggleFilter(this)" data-group="tag2" data-field="tags" data-text="Lớn" value="(Lớn)" data-operator="OR">
-                                                                   <i class="fa"></i>
-                                                                    Lớn 
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                            <span>
-                                                                <label for="filter-nho">
-                                                                    <input type="checkbox" id="filter-nho" onchange="toggleFilter(this)" data-group="tag2" data-field="tags" data-text="Nhỏ" value="(Nhỏ)" data-operator="OR">
-                                                                    <i class="fa"></i>
-                                                                     Nhỏ
-                                                                </label>
-                                                            </span>
-                                                        </li>
-                                                        <li class="filter-item filter-item--check-box filter-item--green">
-                                                           <span>
-                                                            <label for="filter-vua">
-                                                                <input type="checkbox" id="filter-vua" onchange="toggleFilter(this)" data-group="tag2" data-field="tags" data-text="Vừa" value="(Vừa)" data-operator="OR">
-                                                                <i class="fa"></i>
-                                                                Vừa
+                                                <ul class="filter-vendor"> </ul>
+                                            </div>
+                                        </aside>
+                                        <aside class="aside-item filter-price">
+                                            <div class="aside-title">
+                                                <h2 class="title-head margin-top-0">
+                                                    <span>Giá sản phẩm</span>
+                                                </h2>
+                                            </div>
+                                            <div class="aside-content filter-group">
+                                                <ul id="filter-duoi-100.000d">
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-duoi-100-000d">
+                                                                <input type="radio" id="filter-duoi-100-000d" name="filterByPrice">
+                                                                Giá dưới 100.000đ 
                                                             </label>
-                                                           </span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </aside>
-                                        </div>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-100-000d-300-000d">
+                                                                <input type="radio" id="filter-100-000d-300-000d" name="filterByPrice">
+                                                              
+                                                            100.000đ - 300.000đ 
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-300-000d-500-000d">
+                                                                <input type="radio" id="filter-300-000d-500-000d" name="filterByPrice">
+                                                                
+                                                                300.000đ - 500.000đ 
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-500-000d-1-000-000d">
+                                                                <input type="radio" id="filter-500-000d-1-000-000d" name="filterByPrice">
+                                                              
+                                                                 500.000đ - 1.000.000đ
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-tren1-000-000d">
+                                                                <input type="radio" id="filter-tren1-000-000d" name="filterByPrice" >
+                                                               
+                                                                Giá trên 1.000.000đ
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </aside>
+                                        <aside class="aside-item ">
+                                            <div class="aside-title">
+                                                <h2 class="title-head margin-top-0">
+                                                    <span>Kích thước</span>
+                                                </h2>
+                                            </div>
+                                            <div class="aside-content filter-group">
+                                                <ul>
+                                                    <li class="filter-item">
+                                                        <span>
+                                                            <label for="filter-lon">
+                                                               <input type="checkbox" id="filter-lon" >
+                                                               <i class="fa"></i>
+                                                                Lớn 
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                        <span>
+                                                            <label for="filter-nho">
+                                                                <input type="checkbox" id="filter-nho">
+                                                                <i class="fa"></i>
+                                                                 Nhỏ
+                                                            </label>
+                                                        </span>
+                                                    </li>
+                                                    <li class="filter-item ">
+                                                       <span>
+                                                        <label for="filter-vua">
+                                                            <input type="checkbox" id="filter-vua" >
+                                                            <i class="fa"></i>
+                                                            Vừa
+                                                        </label>
+                                                       </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </aside>
                                     </div>
                                 </div>
-                              </div>
                             </div>
-                            <div class="cartegory-right row">
-                                <div class="cartegory-right-content row">
-                                  
-                                </div>
-                               
-                                <div class="text-xs-right">
-                                    <nav class="text-center">
-                                      <ul class="pagination clearfix">
-                                       <li class="page-item disabled">
-                                           <a class="page-link" href="#">«</a>
-                                       </li>
-                                       <li class="active page-item disabled">
-                                           <a class="page-link" href="javascript:;">1</a>
-                                       </li>
-                                       <li class="page-item">
-                                           <a class="page-link" onclick="doSearch(2)" href="javascript:;">2</a>
-                                       </li>
-                                       <li class="page-item">
-                                           <a class="page-link" onclick="doSearch(2)" href="javascript:;">»</a>
-                                       </li>
-                                      </ul> 
-                                    </nav>   
-                                   </div>
-                            </div>
+                          </div>
                         </div>
+                        <div class="cartegory-right row" id="ctgrr">
+                            <div class="cartegory-right-content row">
+                              
                             </div>
-                            
-                </section>
-                <div class="footer">
-                    <div class="footer-content">
-                        <div class="footer-left">
-                            <p><b>LIÊN HỆ VỚI CHÚNG TÔI</b></p>
-                            <p><b>Đường dây nóng:</b> 093-782-0371</p>
-                            <p><b>Thư điện tử:</b> sportsparadise@gmail.com</p>
-                            <p><b>Địa Chỉ:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
+                           
+                            <div class="text-xs-right">
+                                  <ul class="pagination"> 
+                                  </ul>     
                         </div>
-                        <div class="footer-right">
-                            <p><b>CHI NHÁNH CỬA HÀNG</b></p>
-                            <p><b>Chi nhánh 1:</b> 50 Thành Thái, quận 10, Thành phố Hồ Chí Minh</p>
-                            <p><b>Chi nhánh 2:</b> 23 Lê Đức Thọ, phường 17, quận Gò Vấp, thành phố Hồ Chí Minh</p>
-                            <p><b>Chi nhánh 3:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
                         </div>
                     </div>
-                        <br><hr class="hrfooter"><br>
-                    <div class="Copyrighted">© Bản quyền thuộc về Group 6 Corp.</div>
+                        </div>
+                        
+            </section>
+            </div>
+        <!-------------------footer---------->
+        <div class="main1">
+            <div class="footer" id="footeron" style="display: block;">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p><b>CONTACT US</b></p>
+                        <p><b>Hotline:</b> 093-782-0371</p>
+                        <p><b>Email:</b> sportsparadise@gmail.com</p>
+                        <p><b>Address:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="footer-right">
+                        <p><b>BRANCHES</b></p>
+                        <p><b>Branch 1:</b> 50 Thành Thái, quận 10, Thành phố Hồ Chí Minh</p>
+                        <p><b>Branch 2:</b> 23 Lê Đức Thọ, phường 17, quận Gò Vấp, thành phố Hồ Chí Minh</p>
+                        <p><b>Branch 3:</b> 273 Đ. An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh</p>
+                    </div>
                 </div>
-                </div>
-                <script src="./main..js"></script>
-    <script src="./sanpham.js"></script>
-                </body>
-                </html>
+                    <br /><hr  class="hrfooter"/><br />
+                <div class="Copyrighted">© Copyright belongs to Group 6 Corp.</div>
+            </div>
+        </div>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/sanpham.js"></script>
+    <script src="./javascript/search.js"></script>
+    
+</body>
+</html>
