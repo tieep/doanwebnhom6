@@ -257,7 +257,8 @@ function changePagetoPage(category){
     document.getElementById('homePage1').style.display="none";
     document.getElementById('footeron').style.display="block";
     list = document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
-      thisPage=1;
+     // đặt trang mặc định là 1
+	thisPage=1;
     if (category === "all") {
         showProduct(arrSp);
        loadItem();
