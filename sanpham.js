@@ -28,7 +28,7 @@ const arrSp=[
     {name: "Essentials Wind Pants", img: "../image/product_59.jpg", price: 1200000, id: "p57", quantity: 100,brand:"adidas",size:"L"},
     {name: "Tiro 19 Training Pants", img: "../image/product_60.jpg", price: 1200000, id: "p58", quantity: 100,brand:"adidas",size:"L"},
     {name: "French Terry Pants", img: "../image/product_61.jpg", price: 1600000, id: "p59", quantity: 100,brand:"adidas",size:"L"},
-    {name: "Alphaskin 2.0 Sport Tights", img: "../image/product_62.jpg", price: 1120000, id: "p60", quantity: 100,brand:"adidas",size:"L"},
+    {name: "Alphaskin 2.0 Sport Tights Pants", img: "../image/product_62.jpg", price: 1120000, id: "p60", quantity: 100,brand:"adidas",size:"L"},
     {name: "Firebird Track Pants", img: "../image/product_63.jpg", price: 1400000, id: "p61", quantity: 100,brand:"adidas",size:"L"},
     {name: "Essentials Fleece Jogger Pants", img: "../image/product_64.jpg", price: 640000, id: "p62", quantity: 100,brand:"adidas",size:"L"},
     {name: "Adicolor SST Track Pants", img: "../image/product_65.jpg", price: 800000, id: "p63", quantity: 100,brand:"adidas",size:"L"},
@@ -257,7 +257,7 @@ function changePagetoPage(category){
     document.getElementById('homePage1').style.display="none";
     document.getElementById('footeron').style.display="block";
     list = document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
-      
+      thisPage=1;
     if (category === "all") {
         showProduct(arrSp);
        loadItem();
