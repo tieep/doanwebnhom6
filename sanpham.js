@@ -240,16 +240,19 @@ function changePagetoPage(category) {
         loadItem(arrSp);
         categoryArray = arrSp;
         currentCategory = "all";
+        document.getElementById("typeproduct").style.display="flex";
     } else if (category === "pants") {
         showProduct(pants);
         loadItem(pants);
         categoryArray = pants;
         currentCategory = "pants";
+        document.getElementById("typeproduct").style.display="none";
     } else if (category === "shirt") {
         showProduct(shirt);
         loadItem(shirt);
         categoryArray = shirt;
         currentCategory = "shirt";
+        document.getElementById("typeproduct").style.display="none";
     }
 
     listPage(categoryArray);
