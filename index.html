@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <title>Sports Paradise</title>
@@ -428,137 +428,41 @@
                 <button  onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
 
                 <div class="container">
-                    <div  class="cartegory-top row">
-                        <a href="index.html">Trang chủ</a> <span> ></span> <p>All products</p>
-                    </div>
+                   
+                        <div class="cartegoty-top row">
+                            <form class="filter">
+                                <div class="item">
+                                    <label for="">Loại Sản Phẩm</label>
+                                    <select name="cartegory">
+                                        <option value="">---</option>
+                                        <option value="T-SHIRTS">T-SHIRTS</option>
+                                        <option value="Pants">PANTS</option>
+                                    </select>
+                                </div>
+                                <div class="item">
+                                    <label for="">Name</label>
+                                    <input type="text" name="name">
+                                </div>
+                               
+                                <div class="item minprice">
+                                    <label for="">Min Prices</label>
+                                    <input type="number" name="minPrice">
+                                </div>
+                                
+                                <div class="item">
+                                    <label for="">Max Prices</label>
+                                    <input type="number" name="maxPrice">
+                                </div>
+                                <div class="item submit">
+                                    <button>Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="cartegory-left row">
-                          <div class="cartegory-left-top-iteam">
-                            <div class="aside-filter">
-                                <div class="heading">
-                                    <h2 class="title-head">Bộ lọc</h2>
-                                </div>
-                                <div class="aside-hidden-mobile">
-                                    <div class="filter-container">
                         
-                                        <aside class="aside-item filter-vendor">
-                                            <div class="aside-title">
-                                                <h2 class="title-head margin-top-0">
-                                                    <span>Tên Sản Phẩm</span>
-                                                </h2>
-                                            </div>
-                                            <div class="aside-content filter-group">
-                                                <div class="field-search input-group">
-                                                    <input type="text" placeholder="Tìm tên sản phẩm" >
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-default">
-                                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                                        </button>
-                                                    </span>
-                                                </div>
-                                                <ul class="filter-vendor"> </ul>
-                                            </div>
-                                        </aside>
-                                        <aside class="aside-item filter-price">
-                                            <div class="aside-title">
-                                                <h2 class="title-head margin-top-0">
-                                                    <span>Giá sản phẩm</span>
-                                                </h2>
-                                            </div>
-                                            <div class="aside-content filter-group">
-                                                <ul id="filter-duoi-100.000d">
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-duoi-100-000d">
-                                                                <input type="radio" id="filter-duoi-100-000d" name="filterByPrice">
-                                                                Giá dưới 100.000đ 
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-100-000d-300-000d">
-                                                                <input type="radio" id="filter-100-000d-300-000d" name="filterByPrice">
-                                                              
-                                                            100.000đ - 300.000đ 
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-300-000d-500-000d">
-                                                                <input type="radio" id="filter-300-000d-500-000d" name="filterByPrice">
-                                                                
-                                                                300.000đ - 500.000đ 
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-500-000d-1-000-000d">
-                                                                <input type="radio" id="filter-500-000d-1-000-000d" name="filterByPrice">
-                                                              
-                                                                 500.000đ - 1.000.000đ
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-tren1-000-000d">
-                                                                <input type="radio" id="filter-tren1-000-000d" name="filterByPrice" >
-                                                               
-                                                                Giá trên 1.000.000đ
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </aside>
-                                        <aside class="aside-item ">
-                                            <div class="aside-title">
-                                                <h2 class="title-head margin-top-0">
-                                                    <span>Kích thước</span>
-                                                </h2>
-                                            </div>
-                                            <div class="aside-content filter-group">
-                                                <ul>
-                                                    <li class="filter-item">
-                                                        <span>
-                                                            <label for="filter-lon">
-                                                               <input type="checkbox" id="filter-lon" >
-                                                               <i class="fa"></i>
-                                                                Lớn 
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                        <span>
-                                                            <label for="filter-nho">
-                                                                <input type="checkbox" id="filter-nho">
-                                                                <i class="fa"></i>
-                                                                 Nhỏ
-                                                            </label>
-                                                        </span>
-                                                    </li>
-                                                    <li class="filter-item ">
-                                                       <span>
-                                                        <label for="filter-vua">
-                                                            <input type="checkbox" id="filter-vua" >
-                                                            <i class="fa"></i>
-                                                            Vừa
-                                                        </label>
-                                                       </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </aside>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
                         <div class="cartegory-right row" id="ctgrr">
                             <div class="cartegory-right-content row">
                               
@@ -595,9 +499,9 @@
                 <div class="Copyrighted">© Copyright belongs to Group 6 Corp.</div>
             </div>
         </div>
-    <script src="./main.js"></script>
-    <script src="./sanpham.js"></script>
-    <script src="./search.js"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/sanpham.js"></script>
+    <script src="./javascript/search.js"></script>
     
 </body>
 </html>
