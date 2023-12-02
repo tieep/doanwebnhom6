@@ -88,144 +88,119 @@ const arrSp=[
     {name: "3-Stripes Pants", img: "../image/product_53.jpg", price: 900000, id: "p51", quantity: 100,brand:"adidas",size:"L"},
     {name: "Run It 3-Stripes Astro Pants", img: "../image/product_54.jpg", price: 1000000, id: "p52", quantity: 100,brand:"adidas",size:"L"}
     ];
-    function getCurrentCategoryList() {
-        if (currentCategory === "all") {
-            return arrSp;
-        } else if (currentCategory === "pants") {
-            return pants;
-        } else if (currentCategory === "shirt") {
-            return shirt;
+function getCurrentCategoryList() {
+    if (currentCategory === "all") {
+        return arrSp;
+    } else if (currentCategory === "pants") {
+        return pants;
+    } else if (currentCategory === "shirt") {
+        return shirt;
+    }
+}
+
+// Assign the function to a variable
+let getCurrentCategory = getCurrentCategoryList();
+
+function listPage(items) {
+    let count = Math.ceil(items.length / limit);
+    document.querySelector('.pagination').innerHTML = '';
+
+    if (count > 1) {
+        if (thisPage !== 1) {
+            appendPageItem('<<', thisPage - 1, items);
+        }
+
+        for (let i = 1; i <= count; i++) {
+            appendPageItem(i, i, items);
+        }
+
+        if (thisPage !== count) {
+            appendPageItem('>>', thisPage + 1, items);
         }
     }
-    function listPage() {
-        let currentCategoryList = getCurrentCategoryList();
-        let count = Math.ceil(currentCategoryList.length / limit);
-    
-        document.querySelector('.pagination').innerHTML = '';
-    
-        if (count > 1) {
-            if (thisPage != 1) {
-                let prev = document.createElement('li');
-                prev.innerText = '<<';
-                prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
-                document.querySelector('.pagination').appendChild(prev);
-            }
-    
-            for (let i = 1; i <= count; i++) {
-                let newPage = document.createElement('li');
-                newPage.innerText = i;
-                if (i == thisPage) {
-                    newPage.classList.add('active');
-                }
-                newPage.setAttribute('onclick', "changePage(" + i + ")");
-                document.querySelector('.pagination').appendChild(newPage);
-            }
-    
-            if (thisPage != count) {
-                let next = document.createElement('li');
-                next.innerText = '>>';
-                next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
-                document.querySelector('.pagination').appendChild(next);
-            }
-        }
+}
+
+function showProduct(arr) {
+    let str = "";
+    for (let i = 0; i < arr.length; i++) {
+        let obj = JSON.stringify(arr[i]);
+        str += `<div class="cartegory-right-content-item">
+                    <div class=".product-item">
+                        <div class="product-wrapper">
+                            <div class="product-image product-image-block">
+                                <a href="#" title="${arr[i].name}">
+                                    <img src="./image/${arr[i].img}" alt="${arr[i].name}" class="image_main img-responsive center-block image_product">
+                                </a>
+                                <button class="buynow" onclick='addCart(${obj})'>Mua ngay</button>
+                            </div>
+                            <h3 class="product_name">
+                                <a href="#" title="${arr[i].name}">${arr[i].name}</a>
+                            </h3>
+                            <div class="product_prices">
+                                <span class="special-price">${arr[i].price}</span><sup class="special-price-sup">đ</sup>
+                                <button class="btndetail" onclick='showDetail(${obj})'>Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
     }
-    function showProduct(arr) {
-        // Khởi tạo một chuỗi rỗng để lưu kết quả
-        var str = "";
-        // Duyệt qua mảng sản phẩm truyền vào
-        for (let i = 0; i < arr.length; i++) {
-          // Chuyển đổi mỗi sản phẩm thành một chuỗi JSON
-          var obj = JSON.stringify(arr[i]);
-          // Nối thêm một đoạn HTML để hiển thị thông tin sản phẩm
-          str += ` <div class="cartegory-right-content-item">
-              <div class=".product-item">
-                  <div class="product-wrapper">
-                      <div class="product-image product-image-block">
-                          <a href="#" title="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ">
-                              <img src="./image/${arr[i].img}" alt="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ" class="image_main img-responsive center-block image_product">
-                          </a>
-                          <button class="buynow" onclick='addCart(\`${obj}\`)' >Mua ngay</button>
-                      </div>
-                      <h3 class="product_name">
-                          <a href="#" title="ÁO GIỮ NHIỆT THỂ THAO NAM ARSUXEO MS05 - CO DÃN - THOÁNG KHÍ">${arr[i].name}</a>
-                      </h3>
-                      <div class="product_prices">
-                          <span class="special-price">${arr[i].price}</span><sup class="special-price-sup">đ</sup>
-                          <button class="btndetail" onclick='showDetail(\`${obj}\`)' >Detail</button>
-                      </div>
-                  </div>
-              </div>
-              </div>
-              `;
-             
+
+    document.querySelector(".cartegory-right-content").innerHTML = str;
+    listPage(arr);
+}
+
+let thisPage = 1;
+let limit = 12;
+
+function loadItem(items) {
+    let begin = limit * (thisPage - 1);
+    let end = limit * thisPage - 1;
+    let list = document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
+
+    list.forEach((item, key) => {
+        if (key >= begin && key <= end) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
         }
-        // Gán kết quả vào phần tử HTML có class là cartegory-right-content
-        document.querySelector(".cartegory-right-content").innerHTML = str;
-        listPage();
-      }
-    let thisPage=1;
-let limit=12;
-let list=document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
-function loadItem(){
-    let begin=limit*(thisPage-1);
-    let end=limit*thisPage-1;
-    let list=document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
-    list.forEach((item,key)=>{ // item : tung item key: local
-        if(key>=begin && key<=end){
-            item.style.display='block';
-        }
-        else{
-            item.style.display='none';
-         }
-        });
-        listPage();
+    });
+
+    listPage(items);
 }
 
-
-
-function changePage(i){
-    thisPage=i;
-    loadItem();
+function changePage(pageNumber, items) {
+    thisPage = pageNumber;
+    loadItem(items);
 }
-function initializePage() {
-    loadItem();
-    listPage();
+
+function appendPageItem(text, pageNumber, items) {
+    let pageItem = document.createElement('li');
+    pageItem.innerText = text;
+
+    if (pageNumber === thisPage) {
+        pageItem.classList.add('active');
+    }
+
+    pageItem.onclick = function () {
+        changePage(pageNumber, items);
+    };
+
+    document.querySelector('.pagination').appendChild(pageItem);
 }
+
 document.addEventListener('DOMContentLoaded', initializePage);
-   
-      
-     showProduct(arrSp);
-    
-    
-  
-let soluong=0;
-const arrCart=[];
-    function addCart(objSP){
-        console.log(objSP);
-var item;
-var qtyItem=0;
-var flag=false
-;
-for(let i=0;i<arrCart.length;i++){
-    if(arrCart[i].sp.id==objSP.id){
-        arrCart[i].quantity++;
-        flag=true;
-        break;
-    }
-}
-if(flag=false){
-    document.querySelector(".cartNum").innerText=soluong;
-    let cartItem={sp: objSP,quantity:1};
-    addCart.push(cartItem);
-}
-soluong++;
-document.querySelector(".cartNum").innerText=soluong;
 
+function initializePage(item) {
+    loadItem(item);
+    listPage(item);
 }
+
+showProduct(arrSp);
 function showDetail(objSP){
     window.localStorage.clear();
     console.log(objSP);
-    window.localStorage.setItem("sanpham", objSP);
+    window.localStorage.setItem("sanpham", JSON.stringify(objSP));
+   
     var product = JSON.parse(localStorage.getItem('sanpham'));
     var temp1 = '<img src="image/' + product.img + '">';
 
@@ -239,6 +214,7 @@ function showDetail(objSP){
     document.getElementById("atc").innerHTML = '<a class="btnAddtoCart" onclick=\'addCart(\`${obj}\`)\' >Add to cart</a>'
 }
 
+
 function closeDetail()
 {
 	document.getElementById('product_detail').style.top = "-300%";
@@ -251,36 +227,45 @@ function closeDetail()
     document.getElementById('product_detail7').style.top = "-300%";
     document.getElementById('product_detail8').style.top = "-300%";
 }
-
-function changePagetoPage(category){
-    document.getElementById('main1').style.display="block";
-    document.getElementById('homePage1').style.display="none";
-    document.getElementById('footeron').style.display="block";
+function changePagetoPage(category) {
+    document.getElementById('main1').style.display = "block";
+    document.getElementById('homePage1').style.display = "none";
+    document.getElementById('footeron').style.display = "block";
     list = document.querySelectorAll('.cartegory-right-content .cartegory-right-content-item');
-     // đặt trang mặc định là 1
-	thisPage=1;
+    thisPage = 1;
+
+    let categoryArray;
     if (category === "all") {
         showProduct(arrSp);
-       loadItem();
+        loadItem(arrSp);
+        categoryArray = arrSp;
         currentCategory = "all";
     } else if (category === "pants") {
         showProduct(pants);
-        loadItem();
+        loadItem(pants);
+        categoryArray = pants;
         currentCategory = "pants";
     } else if (category === "shirt") {
         showProduct(shirt);
-        loadItem();
+        loadItem(shirt);
+        categoryArray = shirt;
         currentCategory = "shirt";
     }
-    loadItem();
-    initializePage();
+
+    listPage(categoryArray);
+    initializePage(categoryArray);
 }
+
+
+// Initialize pants and shirt arrays
+
 for (let i = 0; i < arrSp.length; i++) {
     if (arrSp[i].name.toLowerCase().includes('pants')) {
-      pants.push(arrSp[i]);
-      
+        pants.push(arrSp[i]);
     } else {
-      shirt.push(arrSp[i]);
-      
+        shirt.push(arrSp[i]);
     }
-  }
+}
+
+// Assuming you have an element with id 'filter'
+
