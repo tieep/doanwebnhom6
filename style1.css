@@ -190,7 +190,10 @@ label[for] {
     text-align: center;
     border: 1px solid #bebebe;
    margin-bottom: 20px;
-   
+   transition: all 0.5s ease;
+}
+.cartegory-right-content-item:hover{
+transform: translateY(-10px);
 }
 .cartegory-right-content-item h1{
     font-size: 11px;
@@ -244,21 +247,8 @@ margin: 60px 0 20px 0 ;
     margin-left: 9px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.product-image button.buynow{
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    background-color: #446084;
-    color: #fff;
-    padding: 8px 0px;
-    position: absolute;
-    width: 100%;
-    bottom: -36px;
-    transition: 0.25s ease-in-out;
-}
-.cartegory-right-content-item :hover button.buynow{
-    bottom: 0px;
-}
+
+
 .btndetail{
     float:right;
     display: flex;
@@ -427,7 +417,8 @@ h2 {
 .closeDetail{
     right: 0;top: 0;
     position: absolute;
-    margin-top: 0px;
+    margin-top: -53%;
+    margin-left: 10px;
 }
 .rating{
     margin-left: 3px;
@@ -450,6 +441,7 @@ b{
   
  .filter .item {
  width: 70%;
+ margin-bottom: 3px;
   }
   
   .item label {
@@ -472,8 +464,8 @@ b{
     background: #fff;
   }
   .item.submit button:hover{
-    color: #680000;
-    background: #9AE5F8;
+    color: white;
+    background: black;
   }
   .item.submit button {
     width: 100px;
@@ -497,7 +489,7 @@ b{
     margin-top: 35px;
    }
 }
-   @media screen and (max-width: 350px) {
+   @media screen and (max-width: 460px) {
     .cartegory-top {
         white-space: nowrap; /* Không ngắt dòng */
         display: block;
@@ -509,16 +501,14 @@ b{
       .cartegory-right-content-item{
         width: calc(100% - 12px);
       }
-      .cartegory-left {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-    }
+      
     .row{
         width: 100%;
     }
     .closeDetail{
         font-size: 25px;
+        margin-top: -84%;
+        margin-right: 15px;
     }
     .Description {
         max-height: 69px;
