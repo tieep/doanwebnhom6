@@ -59,6 +59,14 @@ function applyFilters() {
        {
         alert("Không tìm thấy sản phẩm");
        }
-       
+       if(filteredProducts.length===1) 
+       {
+        document.getElementById("ctgr-content-item").style.width="100%";
+    }
+    if(filteredProducts.length===2) 
+    {
+    
+     document.getElementById("ctgr-content-item").style.margin="0 -10px 0 0 ";
+ }
     
 }
