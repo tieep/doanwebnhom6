@@ -124,14 +124,14 @@ function showProduct(arr) {
     let str = "";
     for (let i = 0; i < arr.length; i++) {
         let obj = JSON.stringify(arr[i]);
-        str += `<div class="cartegory-right-content-item">
+        str += `<div class="cartegory-right-content-item" id="ctgr-content-item">
                     <div class=".product-item">
                         <div class="product-wrapper">
                             <div class="product-image product-image-block">
                                 <a href="#" title="${arr[i].name}">
                                     <img src="./image/${arr[i].img}" alt="${arr[i].name}" class="image_main img-responsive center-block image_product">
                                 </a>
-                                <button class="buynow" onclick='addCart(${obj})'>Mua ngay</button>
+                                
                             </div>
                             <h3 class="product_name">
                                 <a href="#" title="${arr[i].name}">${arr[i].name}</a>
