@@ -27,30 +27,38 @@ function applyFilters() {
 
         if (filters.name !== '' && !itemNameLower.includes(filters.name.toLowerCase())) {
             return false;
-        }
-
-        if (filters.cartegory !== '') {
-            if ((filters.cartegory === 'Pants' && itemNameLower.includes('pants')) ||
-                (filters.cartegory === 'T-SHIRTS' && !itemNameLower.includes('pants'))) {
-                return true;
+          }
+      
+          if (filters.cartegory !== '') {
+            if (filters.cartegory === 'Pants' && !itemNameLower.includes('pants')) {
+                return false;
             }
 
-            return false;
+            if (filters.cartegory === 'T-SHIRTS' && itemNameLower.includes('pants')) {
+                return false;
+            }
         }
-
-        if (filters.minPrice !== '' && item.price < filters.minPrice) {
+      
+          if (filters.minPrice !== '' && item.price < filters.minPrice) {
             return false;
-        }
-
-        if (filters.maxPrice !== '' && item.price > filters.maxPrice) {
+          }
+      
+          if (filters.maxPrice !== '' && item.price > filters.maxPrice) {
             return false;
-        }
-
-        return true;
-    });
+          }
+      
+          return true;
+        });
     thisPage=1;
     limit = 12;
-    loadItem(filteredProducts);
-    listPage(filteredProducts);
-    showProduct(filteredProducts);
+    
+        loadItem(filteredProducts);
+        listPage(filteredProducts);
+        showProduct(filteredProducts);
+    if(filteredProducts.length===0)
+       {
+        alert("Không tìm thấy sản phẩm");
+       }
+       
+    
 }
